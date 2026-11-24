@@ -1,0 +1,36 @@
+name: Request write access
+description: Ask for write access to this repo with a Gmail or work account.
+title: "Request write access"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to ask for write access to this repo with a GitHub account that has a Gmail or work email address.
+
+        - The repo is public. You can read it and fork it without write access.
+        - A repo admin reviews each request and approves one account at a time.
+        - After approval, GitHub sends an invitation to the GitHub account that opens this issue. Accept the invitation to get write access.
+        - This issue is public. Do not write an email address or other private information in it.
+  - type: dropdown
+    id: account
+    attributes:
+      label: Account
+      description: The kind of email address on the GitHub account that opens this issue.
+      options:
+        - Gmail account
+        - Work account
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+    validations:
+      required: true
+  - type: input
+    id: connection
+    attributes:
+      label: Your connection to the project
+      description: For example, your class team, or your company and role.
+    validations:
+      required: true
