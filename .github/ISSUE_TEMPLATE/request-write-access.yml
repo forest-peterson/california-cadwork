@@ -1,11 +1,11 @@
 name: Request write access
-description: Ask for write access to this repo with a Gmail or work account.
+description: Ask for write access to this repo with a Stanford, Gmail or work account.
 title: "Request write access"
 body:
   - type: markdown
     attributes:
       value: |
-        Use this form to ask for write access to this repo with a GitHub account that has a Gmail or work email address.
+        Use this form to ask for write access to this repo with a GitHub account that has a Stanford, Gmail or work email address.
 
         - The repo is public. You can read it and fork it without write access.
         - A repo admin reviews each request and approves one account at a time.
@@ -17,6 +17,7 @@ body:
       label: Account
       description: The kind of email address on the GitHub account that opens this issue.
       options:
+        - Stanford account
         - Gmail account
         - Work account
     validations:
