@@ -5,7 +5,7 @@ description: "Use whenever an agent reads, reports or edits coordinates or eleva
 
 # Origin point of an IFC file
 
-v0.1, 24 November 2026
+v0.2, 24 November 2026
 
 ## Definitions
 
@@ -25,6 +25,11 @@ v0.1, 24 November 2026
 - The lowest ground point in the file is at z = 0, so the file puts the lowest ground at sea level.
 - Compared with the contract plans, Contract_Plans_Merced_Rte_99.pdf, the file's elevations are 47.96 m (157.35 ft) lower than the plans' elevations. To get a plans elevation from the file, convert z from inches to meters and add 47.96 m.
 - The file records no other reference elevation: it has no IfcSite, and its IfcBuilding gives zero for both reference elevations.
+
+## When a model sits on the origin point
+
+- Sometimes a model sits on the origin point: its ground starts at z = 0 and does not reflect the site's actual elevation above sea level. This happens particularly with models from Civil 3D, which the instructor calls "a shit software."
+- MERCED_SR99_solid.ifc is such a model, exported from Civil 3D 2017. Its lowest ground point is at z = 0, but Merced stands about 52 m (171 ft) above sea level (GeoNames; TopoZone, from the USGS Merced topographic map). The file's vertical offset, 47.96 m by comparison with the contract plans, is close to that 52 m because the model sits on the origin point.
 
 ## How an agent got confused
 
