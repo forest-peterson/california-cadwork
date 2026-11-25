@@ -5,7 +5,7 @@ description: "Why the IFC Layer lights (the lamps) in the cadwork BIM Viewer do 
 
 # Layer lights in the cadwork BIM Viewer
 
-v0.1, 24 November 2026
+v0.2, 24 November 2026
 
 On 24 November 2026 an agent spent most of an evening on the IFC Layer lights of the cadwork BIM Viewer. It moved elements into buildings and storeys and rewrote the layers, and none of it helped. One test then showed that the lights depend on the IFC version of the file. This skill keeps the next agent from repeating that.
 
@@ -38,8 +38,8 @@ The five test files hold the same four elements, three curbs and an approach sla
 ## What to do
 
 1. When the user reports that the layer lights do not work, read the file's `FILE_SCHEMA` line first. If it says IFC4 or IFC4X3, tell the user that the viewer's layer lights do not hide elements in that schema, and point to the table above.
-2. When a file must have working layer lights in this viewer, offer an IFC2X3 copy, and say before making it that IFC2X3 has no IfcCourse, IfcKerb, IfcPavement or IfcEarthworksFill, so those elements lose their IFC 4.3 classes. A route tested on the four test elements: import the IFC into Lexocad with `IFC_Importer`, then export it with `IFC_Exporter` and `setIfcVersion(3)`.
-3. The lasting fix is in the viewer, which belongs to cadwork informatik. A report to cadwork needs the two files in `assets/` and the table above.
+2. Leave the IFC 4.3 file as it is. The file is correct, and the repository's files are IFC 4.3 on purpose, so do not convert a file to IFC2X3 or IFC4 to make the lights work.
+3. The fix is in the viewer, which belongs to cadwork informatik. A report to cadwork needs the two files in `assets/` and the table above.
 
 ## How to test a viewer again
 
