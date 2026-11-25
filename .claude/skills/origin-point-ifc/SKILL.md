@@ -1,11 +1,11 @@
 ---
 name: origin-point-ifc
-description: "How to read and report an IFC file's origin point and elevations against sea level. Use this skill whenever an agent reads, reports, compares or edits z values, elevations or coordinates in an IFC file, such as MERCED_SR99_solid.ifc in this repository; whenever the user asks where a file's origin point is, how high a place is above sea level, or why a model's elevations differ from the plans or from a published elevation; and whenever a model comes from Civil 3D. Use it even when the user does not say 'origin point'."
+description: "How to read and report an IFC file's origin point and elevations against sea level. Use this skill whenever an agent reads, reports, compares or edits z values, elevations or coordinates in an IFC file, such as merced_sr99_c3d_ifc43_do_not_use.ifc in this repository; whenever the user asks where a file's origin point is, how high a place is above sea level, or why a model's elevations differ from the plans or from a published elevation; and whenever a model comes from Civil 3D. Use it even when the user does not say 'origin point'."
 ---
 
 # Origin point of an IFC file
 
-v0.3, 24 November 2026
+v0.4, 24 November 2026
 
 An agent that mixes up a file's origin point with a site's elevation gives answers that sound exact and are wrong by tens of meters. This skill keeps the two apart.
 
@@ -26,12 +26,12 @@ An agent that mixes up a file's origin point with a site's elevation gives answe
 
 A modeler can build a model near the origin instead of at its true elevation, and the export then carries no reference elevation. The model's ground starts near z = 0 and does not reflect the site's actual elevation above sea level. This happens particularly with models from Civil 3D, which the instructor calls "a shit software." Check for it by finding the file's lowest ground point: a lowest point at exactly z = 0 means the model sits on the origin point.
 
-## MERCED_SR99_solid.ifc
+## merced_sr99_c3d_ifc43_do_not_use.ifc
 
-- The file was exported from Civil 3D 2017. x and y are California state plane coordinates, zone 3. x, y and z are in US survey inches, although the file declares millimeters.
-- The model sits on the origin point. Its lowest ground point is at z = 0, the file has no IfcSite, and its IfcBuilding gives zero for both reference elevations.
-- Merced stands about 52 m (171 ft) above sea level (GeoNames; TopoZone, from the USGS Merced topographic map). The file's vertical offset from the contract plans, 47.96 m (157.35 ft), is close to that 52 m because the model sits on the origin point.
-- To get a plans elevation from the file, convert z from inches to meters and add 47.96 m.
+- The file is the Civil 3D 2017 export `MERCED_SR99_solid.ifc` converted to IFC 4.3; the Civil 3D export is no longer in the repository. x and y are California state plane coordinates, zone 3. x, y and z are in US survey inches, and the file declares US survey inches.
+- Civil 3D built the model on the origin point: in `MERCED_SR99_solid.ifc` the lowest ground point was at z = 0, the file had no IfcSite, and its IfcBuilding gave zero for both reference elevations.
+- On 24 November 2026 the site was raised by the file's vertical offset from the contract plans, 47.96 m (157.35 ft), so a z value read in the model is a plans elevation. The terrain now runs from about 159 to 177 ft (48 to 54 m). The geometry's own coordinates are still the Civil 3D values; only the site moved.
+- Merced stands about 52 m (171 ft) above sea level (GeoNames; TopoZone, from the USGS Merced topographic map). The offset of 47.96 m is close to that 52 m because Civil 3D built the model on the origin point.
 
 ## Examples
 
