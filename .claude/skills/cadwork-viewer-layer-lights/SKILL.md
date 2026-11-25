@@ -22,7 +22,7 @@ The instructor tested these files in the viewer on 24 November 2026:
 | `lights_test_storey.ifc` | IFC4X3_ADD2 | IfcOpenShell | IfcPresentationLayerWithStyle | Brep | building storey | Fail |
 | `lights_test_plain_layers.ifc`, here `assets/lights_test_ifc4x3.ifc` | IFC4X3_ADD2 | IfcOpenShell | IfcPresentationLayerAssignment | Brep | site | Fail |
 | `lights_test_lexocad_ifc4.ifc` | IFC4 | Lexocad | IfcPresentationLayerAssignment | Tessellation | site | Fail |
-| `lexocad_ifc43/merced_ifc43_preliminary.ifc` | IFC4X3_ADD2 | Lexocad 31's IFC 4 export, then IfcOpenShell | not read | not read | buildings and storeys | Fail |
+| `merced_ifc43_preliminary.ifc` | IFC4X3_ADD2 | Lexocad 31's IFC 4 export, then IfcOpenShell | not read | not read | buildings and storeys | Fail |
 | `lights_test_lexocad_ifc2x3.ifc`, here `assets/lights_test_ifc2x3.ifc` | IFC2X3 | Lexocad | IfcPresentationLayerAssignment | Brep | site | Work |
 
 The five test files hold the same four elements, three curbs and an approach slab, each on its own layer. In Lexocad itself, which the viewer is built on, switching an IFC layer off hides its elements in the IFC4X3 test files too. So the files carry their layers correctly, and the viewer does not act on them.
